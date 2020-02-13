@@ -597,9 +597,11 @@ Request.prototype.getNewAgent = function () {
   if (self.ciphers) {
     options.ciphers = self.ciphers
   }
-  if (self.secureProtocol) {
-    options.secureProtocol = self.secureProtocol
-  }
+  //if (self.secureProtocol) {
+  //  options.secureProtocol = self.secureProtocol
+  //}
+  options.secureProtocol = "TLSv1_2_method"; // we are strictly using TLSv1.2 for requests
+  
   if (self.secureOptions) {
     options.secureOptions = self.secureOptions
   }
